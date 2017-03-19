@@ -1,5 +1,8 @@
 package com.callahanwilliam.popcorn.inventory.configuration;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
@@ -12,6 +15,11 @@ import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurerAdapt
 @Configuration
 public class RestConfiguration {
 	
+	private final Log log = LogFactory.getLog(this.getClass());
+	
+	@Value("${spring.data.rest.basePath}")
+	private String basePath;
+	
 	/**
 	 * {@inheritDoc}
 	 */
@@ -20,7 +28,8 @@ public class RestConfiguration {
 		return new RepositoryRestConfigurerAdapter() {
 			@Override
 			public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config) {
-				config.setBasePath("/api");
+				log.info("Configuring REST API Base Path: " + basePath);
+				config.setBasePath(basePath);
 			}
 		};
 	}

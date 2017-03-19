@@ -2,6 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
 	<parent>
 		<artifactId>popcorn-inventory</artifactId>
 		<groupId>com.callahanwilliam</groupId>
@@ -12,6 +13,19 @@
 	<artifactId>popcorn-inventory-api</artifactId>
 
 	<dependencies>
+
+		<!-- PopcornInventory -->
+
+		<dependency>
+			<groupId>com.callahanwilliam</groupId>
+			<artifactId>popcorn-inventory-database</artifactId>
+			<version>${popcorn.inventory}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.callahanwilliam</groupId>
+			<artifactId>popcorn-inventory-common</artifactId>
+			<version>${popcorn.inventory}</version>
+		</dependency>
 
 		<!-- region Spring Framework -->
 
@@ -39,6 +53,14 @@
 			<version>${spring.data.rest.webmvc.version}</version>
 		</dependency>
 
+		<!-- TODO Test the HAL Browser-->
+
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-rest-hal-browser</artifactId>
+			<version>${spring.data.rest.hal.browser.version}</version>
+		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-web</artifactId>
@@ -58,13 +80,13 @@
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
-			<version>${jackson.library}</version>
+			<version>${jackson.library.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>com.fasterxml.jackson.dataformat</groupId>
 			<artifactId>jackson-dataformat-xml</artifactId>
-			<version>${jackson.library}</version>
+			<version>${jackson.library.version}</version>
 		</dependency>
 
 		<!-- endregion -->

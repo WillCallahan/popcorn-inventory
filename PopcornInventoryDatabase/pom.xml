@@ -15,6 +15,14 @@
 
 	<dependencies>
 
+		<!-- PopcornInventory -->
+
+		<dependency>
+			<groupId>com.callahanwilliam</groupId>
+			<artifactId>popcorn-inventory-common</artifactId>
+			<version>${popcorn.inventory}</version>
+		</dependency>
+
 		<!-- region Hibernate -->
 
 		<dependency>
@@ -27,25 +35,25 @@
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-c3p0</artifactId>
-			<version>${hibrenate.core}</version>
+			<version>${hibrenate.core.version}</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
-			<version>${hibrenate.core}</version>
+			<version>${hibrenate.core.version}</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-ehcache</artifactId>
-			<version>${hibrenate.core}</version>
+			<version>${hibrenate.core.version}</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
-			<version>${hibrenate.core}</version>
+			<version>${hibrenate.core.version}</version>
 			<scope>provided</scope>
 		</dependency>
 
@@ -56,13 +64,13 @@
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
-			<version>${jackson.library}</version>
+			<version>${jackson.library.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>com.fasterxml.jackson.dataformat</groupId>
 			<artifactId>jackson-dataformat-xml</artifactId>
-			<version>${jackson.library}</version>
+			<version>${jackson.library.version}</version>
 		</dependency>
 
 		<!-- endregion -->

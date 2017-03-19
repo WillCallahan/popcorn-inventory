@@ -12,12 +12,12 @@
         <module name="PopcornInventoryWeb" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="PopcornInventory" target="1.5" />
-      <module name="PopcornInventoryAPI" target="1.5" />
-      <module name="PopcornInventoryCommon" target="1.5" />
-      <module name="PopcornInventoryDatabase" target="1.5" />
-      <module name="PopcornInventoryWeb" target="1.5" />
+    <bytecodeTargetLevel target="1.8">
+      <module name="PopcornInventory" target="1.8" />
+      <module name="PopcornInventoryAPI" target="1.8" />
+      <module name="PopcornInventoryCommon" target="1.8" />
+      <module name="PopcornInventoryDatabase" target="1.8" />
+      <module name="PopcornInventoryWeb" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

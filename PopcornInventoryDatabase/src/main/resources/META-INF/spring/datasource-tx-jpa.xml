@@ -3,46 +3,39 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:tx="http://www.springframework.org/schema/tx"
        xmlns:jee="http://www.springframework.org/schema/jee"
+       xmlns:jpa="http://www.springframework.org/schema/data/jpa"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
               http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
-              http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd">
+              http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd
+              http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
+
+	<!-- Datasource Lookup -->
+
+	<jee:jndi-lookup id="PopcornInventoryDS" jndi-name="java:/PopcornInventoryDS"/>
+
+	<!-- Spring Data JPA Repository Configuration  -->
+
+	<jpa:repositories base-package="com.callahanwilliam.popcorn.inventory.repository"/>
 
 	<!-- Transaction Management Configuration -->
 
 	<tx:annotation-driven transaction-manager="transactionManager"/>
-	<tx:jta-transaction-manager/>
 
-	<jee:jndi-lookup id="PopcornInventoryDS" jndi-name="java:/PopcornInventoryDS"/>
+	<bean id="transactionManager" class="org.springframework.transaction.jta.JtaTransactionManager"/>
 
-	<!--<bean id="txManager" class="org.springframework.orm.jpa.JpaTransactionManager">-->
-	<!--<property name="entityManagerFactory" ref="entityManagerFactory"/>-->
-	<!--</bean>-->
+	<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="jtaDataSource" ref="PopcornInventoryDS"/>
+		<property name="jpaVendorAdapter" ref="jpaVendorAdapter"/>
+	</bean>
 
-	<!--&lt;!&ndash; EntityManagerFactory Definition for use by @PersistenceContext &ndash;&gt;-->
+	<bean id="jpaVendorAdapter" class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+		<property name="database" value="ORACLE"/>
+		<property name="showSql" value="true"/>
+		<property name="generateDdl" value="false"/>
+	</bean>
 
-	<!--<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">-->
-	<!--<property name="persistenceUnitName" value="InventoryDS"/>-->
-	<!--<property name="jpaVendorAdapter">-->
-	<!--<bean class="org.springframework.orm.jpa.vendor.EclipseLinkJpaVendorAdapter">-->
-	<!--<property name="showSql" value="true"/>-->
-	<!--<property name="generateDdl" value="true"/>-->
-	<!--<property name="databasePlatform" value="org.eclipse.persistence.platform.database.OraclePlatform"/>-->
-	<!--</bean>-->
-	<!--</property>-->
-	<!--<property name="jpaDialect">-->
-	<!--<bean class="org.springframework.orm.jpa.vendor.EclipseLinkJpaDialect"/>-->
-	<!--</property>-->
-	<!--</bean>-->
+	<!-- Support for @PersistenceContext -->
 
-	<!--&lt;!&ndash; Persistence Annotation Injection Processor &ndash;&gt;-->
-
-	<!--<bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor">-->
-	<!--<property name="persistenceUnits">-->
-	<!--<map>-->
-	<!--<entry key="InventoryDS" value="InventoryDS"/>-->
-	<!--</map>-->
-	<!--</property>-->
-	<!--<property name="defaultPersistenceUnitName" value="InventoryDS"/>-->
-	<!--</bean>-->
+	<bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor"/>
 
 </beans>

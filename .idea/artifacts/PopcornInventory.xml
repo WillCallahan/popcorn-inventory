@@ -45,6 +45,7 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-orm:4.3.7.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-jdbc:4.3.7.RELEASE" />
           <element id="library" level="project" name="Maven: org.aspectj:aspectjrt:1.8.10" />
+          <element id="library" level="project" name="Maven: org.springframework.data:spring-data-rest-hal-browser:2.4.0.RELEASE" />
         </element>
       </element>
       <element id="javaee-facet-resources" facet="PopcornInventoryWeb/web/Web" />

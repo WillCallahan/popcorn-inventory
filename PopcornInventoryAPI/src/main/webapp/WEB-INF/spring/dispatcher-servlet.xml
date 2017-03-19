@@ -10,6 +10,9 @@
 	<mvc:annotation-driven/>
 	<mvc:default-servlet-handler/>
 
+	<context:property-placeholder location="classpath:rest.properties"/>
+	<context:component-scan base-package="com.callahanwilliam.popcorn.inventory"/>
+
 	<!-- region Resources -->
 
 	<mvc:resources mapping="/js/**" location="/js/"/>
@@ -25,7 +28,5 @@
 		<property name="prefix" value="/WEB-INF/jsp/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
-
-	<context:component-scan base-package="com.callahanwilliam.popcorn.inventory"/>
 
 </beans>

@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" version="2.1">
     <persistence-unit name="PopcornInventoryDS" transaction-type="JTA">
+	    <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 	    <jta-data-source>java:/PopcornInventoryDS</jta-data-source>
         <class>com.callahanwilliam.popcorn.inventory.domain.entity.Seller</class>
+	    <properties>
+		    <property name="hibernate.dialect" value="org.hibernate.dialect.Oracle10gDialect"/>
+		    <property name="hibernate.transaction.jta.platform" value="org.hibernate.service.jta.platform.internal.JBossAppServerJtaPlatform"/>
+	    </properties>
 		<!--<properties>
             <property name="eclipselink.jdbc.url" value="jdbc:oracle:thin:@//127.0.0.1:1521/XE"/>
             <property name="eclipselink.jdbc.driver" value="oracle.jdbc.OracleDriver"/>
