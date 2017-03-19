@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" version="2.1">
+    <persistence-unit name="PopcornInventoryDS" transaction-type="JTA">
+	    <jta-data-source>java:/PopcornInventoryDS</jta-data-source>
+        <class>com.callahanwilliam.popcorn.inventory.domain.entity.Seller</class>
+		<!--<properties>
+            <property name="eclipselink.jdbc.url" value="jdbc:oracle:thin:@//127.0.0.1:1521/XE"/>
+            <property name="eclipselink.jdbc.driver" value="oracle.jdbc.OracleDriver"/>
+            <property name="eclipselink.jdbc.user" value="pop_user" />
+            <property name="eclipselink.jdbc.password" value="p0pInvUSr" />
+            <property name="eclipselink.ddl-generation" value="drop-and-create-tables" />
+            <property name="eclipselink.ddl-generation.output-mode" value="database" />
+        </properties>-->
+    </persistence-unit>
+</persistence>

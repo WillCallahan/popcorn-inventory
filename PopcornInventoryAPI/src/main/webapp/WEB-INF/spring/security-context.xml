@@ -1,0 +1,23 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:security="http://www.springframework.org/schema/security"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+          http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
+
+	<bean id="springSecurityFilterChain" class="org.springframework.web.filter.DelegatingFilterProxy"/>
+
+	<security:http auto-config="true">
+		<security:intercept-url pattern="/**" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+		<security:anonymous enabled="true"/>
+		<security:logout logout-url="/logout" invalidate-session="true" />
+	</security:http>
+
+	<security:authentication-manager>
+		<security:authentication-provider>
+			<security:user-service>
+				<security:user name="admin" authorities="IS_AUTHENTICATED_FULLY"/>
+			</security:user-service>
+		</security:authentication-provider>
+	</security:authentication-manager>
+
+</beans>

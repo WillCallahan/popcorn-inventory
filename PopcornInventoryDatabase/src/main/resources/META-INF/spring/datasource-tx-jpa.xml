@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:jee="http://www.springframework.org/schema/jee"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+
+
+              http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+              http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd">
+
+	<!-- Transaction Management Configuration -->
+
+	<tx:annotation-driven transaction-manager="transactionManager"/>
+	<tx:jta-transaction-manager/>
+
+	<jee:jndi-lookup id="popcornInventoryDS" jndi-name="persistence/popcornInventoryDS"/>
+
+	<!--<bean id="txManager" class="org.springframework.orm.jpa.JpaTransactionManager">-->
+	<!--<property name="entityManagerFactory" ref="entityManagerFactory"/>-->
+	<!--</bean>-->
+
+	<!--&lt;!&ndash; EntityManagerFactory Definition for use by @PersistenceContext &ndash;&gt;-->
+
+	<!--<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">-->
+	<!--<property name="persistenceUnitName" value="InventoryDS"/>-->
+	<!--<property name="jpaVendorAdapter">-->
+	<!--<bean class="org.springframework.orm.jpa.vendor.EclipseLinkJpaVendorAdapter">-->
+	<!--<property name="showSql" value="true"/>-->
+	<!--<property name="generateDdl" value="true"/>-->
+	<!--<property name="databasePlatform" value="org.eclipse.persistence.platform.database.OraclePlatform"/>-->
+	<!--</bean>-->
+	<!--</property>-->
+	<!--<property name="jpaDialect">-->
+	<!--<bean class="org.springframework.orm.jpa.vendor.EclipseLinkJpaDialect"/>-->
+	<!--</property>-->
+	<!--</bean>-->
+
+	<!--&lt;!&ndash; Persistence Annotation Injection Processor &ndash;&gt;-->
+
+	<!--<bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor">-->
+	<!--<property name="persistenceUnits">-->
+	<!--<map>-->
+	<!--<entry key="InventoryDS" value="InventoryDS"/>-->
+	<!--</map>-->
+	<!--</property>-->
+	<!--<property name="defaultPersistenceUnitName" value="InventoryDS"/>-->
+	<!--</bean>-->
+
+</beans>

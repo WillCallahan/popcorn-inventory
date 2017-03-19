@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.callahanwilliam</groupId>
+	<artifactId>popcorn-inventory</artifactId>
+	<packaging>pom</packaging>
+	<version>1.0-SNAPSHOT</version>
+
+	<modules>
+		<module>PopcornInventoryAPI</module>
+		<module>PopcornInventoryWeb</module>
+		<module>PopcornInventoryDatabase</module>
+		<module>PopcornInventoryCommon</module>
+	</modules>
+
+	<properties>
+		<jackson.library>2.8.6</jackson.library>
+		<jstl.version>1.2</jstl.version>
+		<hibrenate.core>5.2.8.Final</hibrenate.core>
+		<spring.version>4.3.7.RELEASE</spring.version>
+		<spring.data.version>1.11.1.RELEASE</spring.data.version>
+		<spring.data.rest.webmvc.version>2.6.1.RELEASE</spring.data.rest.webmvc.version>
+		<spring.security.version>4.1.4.RELEASE</spring.security.version>
+	</properties>
+
+</project>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/PopcornInventory.iml" filepath="$PROJECT_DIR$/PopcornInventory.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PopcornInventoryAPI/PopcornInventoryAPI.iml" filepath="$PROJECT_DIR$/PopcornInventoryAPI/PopcornInventoryAPI.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PopcornInventoryCommon/PopcornInventoryCommon.iml" filepath="$PROJECT_DIR$/PopcornInventoryCommon/PopcornInventoryCommon.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PopcornInventoryDatabase/PopcornInventoryDatabase.iml" filepath="$PROJECT_DIR$/PopcornInventoryDatabase/PopcornInventoryDatabase.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PopcornInventoryWeb/PopcornInventoryWeb.iml" filepath="$PROJECT_DIR$/PopcornInventoryWeb/PopcornInventoryWeb.iml" />
+    </modules>
+  </component>
+</project>
