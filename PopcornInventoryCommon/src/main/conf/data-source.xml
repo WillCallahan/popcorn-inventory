@@ -1,0 +1,22 @@
+<!-- Place this in the wildfly-10.1.0.Final\standalone\configuration\standalone-full.xml -->
+<xa-datasource jndi-name="java:/PopcornInventoryDS" pool-name="PopcornInventoryDS" enabled="true" use-ccm="true">
+	<xa-datasource-property name="URL">
+		jdbc:oracle:thin:@localhost:1521:XE
+	</xa-datasource-property>
+	<xa-datasource-class>oracle.jdbc.xa.client.OracleXADataSource</xa-datasource-class>
+	<driver>oracle</driver>
+	<xa-pool>
+		<is-same-rm-override>false</is-same-rm-override>
+		<no-tx-separate-pools>true</no-tx-separate-pools>
+	</xa-pool>
+	<security>
+		<user-name>pop_user</user-name>
+		<password>p0pInvUSr</password>
+	</security>
+	<validation>
+		<valid-connection-checker class-name="org.jboss.jca.adapters.jdbc.extensions.oracle.OracleValidConnectionChecker"/>
+		<background-validation>true</background-validation>
+		<stale-connection-checker class-name="org.jboss.jca.adapters.jdbc.extensions.oracle.OracleStaleConnectionChecker"/>
+		<exception-sorter class-name="org.jboss.jca.adapters.jdbc.extensions.oracle.OracleExceptionSorter"/>
+	</validation>
+</xa-datasource>

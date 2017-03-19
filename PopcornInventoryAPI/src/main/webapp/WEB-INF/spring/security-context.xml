@@ -7,7 +7,7 @@
 	<bean id="springSecurityFilterChain" class="org.springframework.web.filter.DelegatingFilterProxy"/>
 
 	<security:http auto-config="true">
-		<security:intercept-url pattern="/**" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+		<security:intercept-url pattern="/**" access="permitAll"/>
 		<security:anonymous enabled="true"/>
 		<security:logout logout-url="/logout" invalidate-session="true" />
 	</security:http>

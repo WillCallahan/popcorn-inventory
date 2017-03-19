@@ -4,8 +4,6 @@
        xmlns:tx="http://www.springframework.org/schema/tx"
        xmlns:jee="http://www.springframework.org/schema/jee"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-
-
               http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
               http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd">
 
@@ -14,7 +12,7 @@
 	<tx:annotation-driven transaction-manager="transactionManager"/>
 	<tx:jta-transaction-manager/>
 
-	<jee:jndi-lookup id="popcornInventoryDS" jndi-name="persistence/popcornInventoryDS"/>
+	<jee:jndi-lookup id="PopcornInventoryDS" jndi-name="java:/PopcornInventoryDS"/>
 
 	<!--<bean id="txManager" class="org.springframework.orm.jpa.JpaTransactionManager">-->
 	<!--<property name="entityManagerFactory" ref="entityManagerFactory"/>-->
