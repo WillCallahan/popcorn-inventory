@@ -21,6 +21,7 @@
 			<artifactId>popcorn-inventory-database</artifactId>
 			<version>${popcorn.inventory}</version>
 		</dependency>
+
 		<dependency>
 			<groupId>com.callahanwilliam</groupId>
 			<artifactId>popcorn-inventory-common</artifactId>
